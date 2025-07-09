@@ -3,8 +3,8 @@
 
 ## Django Shell Commands
 ```python
-book = Book.objects.get(title="Mr Success")
-book.title = "Mr Victory"
+book = Book.objects.get(title='1984')
+book.title = "Nineteen Eighty-Four"
 book.save()
 
 Output
@@ -14,4 +14,4 @@ python
 Book.objects.values_list()
 # Output:
 # <QuerySet [
-#     (1, '"1984"', 'George Orwell', 1949)
+#     (1, '1984', 'George Orwell', 1949)
