@@ -14,6 +14,4 @@ python
 Book.objects.values_list()
 # Output:
 # <QuerySet [
-#     (1, 'Complete Django', 'Isreal M.S', 2025),
-#     (3, 'Mr Victory', 'Makinde I.S', 2025)
-# ]>
+#     (1, '"1984"', 'George Orwell', 1949)
