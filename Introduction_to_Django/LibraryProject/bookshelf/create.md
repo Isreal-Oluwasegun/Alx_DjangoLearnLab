@@ -1,9 +1,12 @@
-# Create Operation
+# Create Operation — Using Model Manager
 
 ## Django Shell Commands
 ```python
-book = Book(title="Mr Success", author="Makinde I.S", publication_year=2025)
-book.save()
+Book.objects.create(
+    title="Mr Success",
+    author="Makinde I.S",
+    publication_year=2025
+)
 
 Output
 No explicit output from .save(), but creation is confirmed by:
