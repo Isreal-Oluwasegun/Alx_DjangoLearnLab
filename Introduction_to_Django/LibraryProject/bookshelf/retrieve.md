@@ -2,8 +2,9 @@
 
 ## Django Shell Commands
 ```python
-book = Book.objects.get(title="Mr Success")
+book = Book.objects.get(title="1984")
 print(f"{book.title}, {book.author}, {book.publication_year}")
 
 Output
-Mr Success, Makinde I.S, 2025
+1984, George Orwell, 2025
+
