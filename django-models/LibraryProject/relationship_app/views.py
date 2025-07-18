@@ -22,8 +22,10 @@ class register(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'relationship_app/register.html'
 
+    def get_form(self, form_class=None):
+        return UserCreationForm()
+
     def form_valid(self, form):
         response = super().form_valid(form)
-        login(self.request, self.object) 
+        login(self.request, self.object)
         return response
-
