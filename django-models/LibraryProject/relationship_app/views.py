@@ -4,7 +4,7 @@ from relationship_app.models import Book
 from .models import Library
 
 
-def all_books(request):
+def list_books(request):
     books = Book.objects.all()
     return render(request, 'relationship_app/list_books.html', {'books':books})
 
