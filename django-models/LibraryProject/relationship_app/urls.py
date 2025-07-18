@@ -19,5 +19,6 @@ from . import views
 from django.urls import path, include
 
 urlpatterns = [
-    path('library/', views.all_books, name='book_list'),
+    path('books/', views.all_books, name='book_list'),
+    path('library/<int:pk>/', views.LibraryDetails.as_view(), name="library_detail")
 ]
