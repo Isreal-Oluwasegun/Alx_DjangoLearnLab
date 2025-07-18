@@ -1,3 +1,4 @@
 Book.objects.filter(name="Mk")
-Library.objects.get(name="Obj library").books.all()
+library_name = "Obj library"
+Library.objects.get(name=library_name).books.all()
 Librarian.objects.filter(library__name__iexact="obj library")
