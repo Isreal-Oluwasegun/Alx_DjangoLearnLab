@@ -6,6 +6,7 @@ from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.contrib.auth import login
+from django.contrib.auth.decorators import user_passes_test
 
 def list_books(request):
     books = Book.objects.all()
@@ -29,3 +30,4 @@ class register(CreateView):
         response = super().form_valid(form)
         login(self.request, self.object)
         return response
+    
