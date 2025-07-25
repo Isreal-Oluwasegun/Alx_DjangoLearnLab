@@ -21,10 +21,6 @@ from . import views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic import TemplateView
 from django.urls import path
-from .admin_view import admin_view
-from .librarian_view import librarian_view
-from .member_view import member_view
-
 
 
 urlpatterns = [
@@ -35,9 +31,11 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='relationship_app/logout.html'), name='logout'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/profile/', TemplateView.as_view(template_name='accounts/profile.html'), name='profile'),
-    path('admin-view/', admin_view, name='Admin'),
-    path('librarian-view/', librarian_view, name='Librarian'),
-    path('member-view/', member_view, name='Member'),
+    path('admin-view/', views.admin_view, name='Admin'),
+    path('librarian-view/', views.librarian_view, name='Librarian'),
+    path('member-view/', views.member_view, name='Member'),
+    
+   
 
 
 
