@@ -6,7 +6,7 @@ from .models import CustomUser
 
 
 
-class UserAdmin(DefaultUserAdmin):
+class CustomUserAdmin(DefaultUserAdmin):
     model = CustomUser
     fieldsets = (
         DefaultUserAdmin.fieldsets + (
@@ -26,4 +26,4 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ("author",)
 
 admin.site.register(Book, BookAdmin)
-admin.site.register(CustomUser, UserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)
