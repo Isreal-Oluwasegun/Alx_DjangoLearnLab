@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 
-class UserManager(BaseUserManager):
+class CustomUserManager(BaseUserManager):
     def create_user(self, email, password):
         if not email:
             raise ValueError("User must have email address")
@@ -20,7 +21,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
     profile_photo = models.ImageField(upload_to="profile/")
 
-    objects = UserManager()
+    objects = CustomUserManager()
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
