@@ -3,27 +3,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-class UserManager(BaseUserManager):
-    def crete_user(self, email, password):
-        if not email:
-            raise ValueError("User must have email address")
-        user = self.model(self.normalize_email(email))
-        user.set_password(password)
-        user.save(using = user._db)
-        return user
-    
-    def create_superuser(self, email, password):
-        user =self.crete_user(email, password)
-        user.is_staff = True
-        user.is_superuser = True
-        user.save(using=self._db)
 
-
-class CustomUser(AbstractUser):
-    date_of_birth = models.DateField(null=True, blank=True)
-    profile_photo = models.ImageField(upload_to="profile/")
-
-    objects = UserManager()
 
 class UserProfile(models.Model):
     role = [
